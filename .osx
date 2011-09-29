@@ -7,8 +7,8 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 # Enable the 2D Dock
 defaults write com.apple.dock no-glass -bool true
 
-# Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+# do not Automatically hide the Dock
+defaults write com.apple.dock autohide -bool false
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
@@ -25,6 +25,12 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 # Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
+
+#show hidden files in finder
+defaults write com.apple.Finder AppleShowAllFiles -bool true
+
+#hide desktop icons
+defaults write com.apple.finder CreateDesktop -bool false
 
 # Show all filename extensions in Finder
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -98,8 +104,8 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Empty Trash securely by default
 defaults write com.apple.finder EmptyTrashSecurely -bool true
 
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
+# Dont Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 0
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Enable tap to click (Trackpad)

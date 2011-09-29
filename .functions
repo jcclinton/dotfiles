@@ -13,3 +13,9 @@ httpcompression() {
 digga() {
   dig +nocmd "$1" any +multiline +noall +answer
 }
+
+
+#my personal functions
+pass(){
+	mono ~/Downloads/keepass/KeePass.exe
+}
