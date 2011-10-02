@@ -40,3 +40,6 @@
   co = checkout
   df = diff
   lg = log -p
+[user]
+	name = Jamie Clinton
+	email = jcclinton24@gmail.com

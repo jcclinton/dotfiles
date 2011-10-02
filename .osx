@@ -26,8 +26,8 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
 
-#show hidden files in finder
-defaults write com.apple.Finder AppleShowAllFiles -bool true
+# do not show hidden files in finder
+defaults write com.apple.Finder AppleShowAllFiles -bool false
 
 #hide desktop icons
 defaults write com.apple.finder CreateDesktop -bool false
