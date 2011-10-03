@@ -22,3 +22,5 @@ set statusline+=%#statuserror#
 set nobackup
 set nowb
 set noswapfile
+
+colorscheme molokai
