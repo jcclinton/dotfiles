@@ -37,7 +37,7 @@ alias c="tr -d '\n' | pbcopy"
 
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
-alias p="cd ~/projects/sencha/actual_projects/"
+alias p="cd ~/projects/titanium/actual_projects/book/"
 alias g="git"
 alias v="vim"
 alias m="mate ."

@@ -21,6 +21,10 @@
 	untracked = cyan
 [merge]
 	log = true
+[url "git@bitbucket.org:"]
+	insteadOf = "bb:"
+	pushInsteadOf = "bitbucket:"
+	pushInsteadOf = "git://bitbucket.org/"
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
@@ -42,6 +46,7 @@
   lg = log -p
 	lp = log --pretty=oneline
 	graph = log --pretty=format:'%h : %s' --graph
+	amend = commit --amend -C HEAD
 [user]
 	name = Jamie Clinton
 	email = jcclinton24@gmail.com
