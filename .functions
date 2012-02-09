@@ -21,5 +21,18 @@ function digga() {
 
 #my personal functions
 function gitmg() {
-	git co master && git merge $1 && git branch -d $1 && git push
+	local branch=$(gitCurrentBranch)
+	git co master && git merge $branch && git branch -d $branch && git push && git branch
+}
+
+function gitCurrentBranch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+function gitci() {
+	local branch=$(gitCurrentBranch)
+	echo $branch
+	local str=$branch": "$1
+	echo $str
+	git ci -am "\"$str\""
 }
