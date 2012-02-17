@@ -31,8 +31,6 @@ function gitCurrentBranch() {
 
 function gitci() {
 	local branch=$(gitCurrentBranch)
-	echo $branch
 	local str=$branch": "$*
-	echo $str
 	git ci -am "\"$str\""
 }
