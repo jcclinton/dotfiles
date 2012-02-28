@@ -89,3 +89,6 @@ alias n2r='/usr/local/Cellar/nginx/1.0.8/sbin/nginx -s reload'
 
 #couch commands:
 alias c2start='/usr/local/Cellar/couchdb/1.1.1/bin/couchdb'
+
+#source bash
+alias src="source $HOME/.bash_profile"
