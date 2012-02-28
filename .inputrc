@@ -5,4 +5,4 @@ set completion-ignore-case on
 set mark-symlinked-directories on
 
 # List all matches in case multiple possible completions are possible
-set show-all-if-ambiguous on
+set show-all-if-ambiguous off
