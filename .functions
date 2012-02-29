@@ -22,7 +22,22 @@ function digga() {
 #my personal functions
 function gitmg() {
 	local branch=$(gitCurrentBranch)
-	git co master && git merge $branch && git branch -d $branch && git push && git branch
+
+	if [[ $1 ]]
+	then
+		local newBranch=$1
+	else
+		local newBranch=master
+	fi
+
+	git co $newBranch && git merge $branch && git branch -d $branch
+
+	if [[ ! $1 ]]
+	then
+		git push
+	fi
+
+	git branch
 }
 
 function gitCurrentBranch() {
