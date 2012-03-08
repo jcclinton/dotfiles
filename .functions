@@ -49,3 +49,7 @@ function gitci() {
 	local str=$branch": "$*
 	git ci -am "$str"
 }
+
+function linecount(){
+	find . -iname '*js' -exec wc -l {} \; | awk '{ sum+=$1} END {print sum}'
+}
