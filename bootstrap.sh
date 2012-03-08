@@ -1,7 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
-#dont pull since it may break the vimrc
 #git pull
 
 #read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
