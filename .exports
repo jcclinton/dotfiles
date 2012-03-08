@@ -1,5 +1,5 @@
 # Make vim the default editor
-export EDITOR="mvim"
+export EDITOR="vim"
 # Make less the default manual pager
 export MANPAGER="less"
 
