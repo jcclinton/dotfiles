@@ -42,7 +42,7 @@ alias c="tr -d '\n' | pbcopy"
 alias d="cd ~/Documents/Dropbox"
 alias p="cd ~/projects/titanium/actual_projects/book/"
 alias r="p && cd Resources"
-alias cms="~/projects/cms/"
+alias cms="cd ~/projects/cms/"
 
 # File size
 alias fs="stat -f \"%z bytes\""
