@@ -30,7 +30,7 @@ function gitmg() {
 		local newBranch=master
 	fi
 
-	git co $newBranch && git merge $branch && git branch -d $branch
+	git co $newBranch && git merge $branch && git branch -d $branch && git push origin :$branch
 
 	if [[ ! $1 ]]
 	then
