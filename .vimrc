@@ -38,6 +38,11 @@ set lcs=tab:·\ ,trail:▸,nbsp:_
 " disable error bells
 set noerrorbells
 
+" sets :vs to open new windows to the right of current window
+set splitright
+" sets :sp to open new windows below current window
+set splitbelow
+
 "disable line wrap
 "set nowrap
 
