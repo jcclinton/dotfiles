@@ -39,6 +39,7 @@
 	insteadOf = "gist:"
 [alias]
   st = status
+	ss = status --short
   ci = commit
   br = branch
   co = checkout
