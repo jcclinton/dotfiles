@@ -32,11 +32,7 @@ function gitmg() {
 
 	git co $newBranch && git merge $branch && git branch -d $branch && git push origin :$branch
 
-	if [[ ! $1 ]]
-	then
-		git push
-	fi
-
+	git push
 	git branch
 }
 
