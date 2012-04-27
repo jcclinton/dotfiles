@@ -51,14 +51,8 @@ colorscheme molokai
 "pressing tab on the camondand line will show the wildmenu
 set wildchar=<Tab> wildmenu wildmode=full
 
-" map esc to pressing j twice
-inoremap jj <Esc>
-
 " map colon to pressing semicolon
 noremap ; :
-
-" map :w when i accidently press :W
-cnoremap W w
 
 "The following simple user-defined command :Buffer allows switching a buffer in the current window choosing it from the buffer list:
 "It can be abbreviated as :B
