@@ -43,6 +43,7 @@ alias d="cd ~/Documents/Dropbox"
 alias p="cd ~/projects/titanium/actual_projects/Antietam/"
 alias r="p && cd Resources"
 alias cms="cd ~/projects/cms/"
+alias wp="cd ~/Sites/wordpress/mysite"
 
 # File size
 alias fs="stat -f \"%z bytes\""
