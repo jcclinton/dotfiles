@@ -49,3 +49,7 @@ function gitci() {
 function linecount(){
 	find . -iname '*js' -exec wc -l {} \; | awk '{ sum+=$1} END {print sum}'
 }
+
+function curlsize(){
+	curl -w "%{size_download}" $1
+}
