@@ -59,3 +59,20 @@ noremap ; :
 "It shows the buffer list printed out by the :ls command and asks a user for the input which is transferred to :buffer command.
 "The command with an exclamation mark :B! executes :ls! which includes unlisted buffers in the list. Entering a zero as answer creates a new buffer with :enew command.
 command -nargs=? -bang  Buffer  if <q-args> != '' | exe 'buffer '.<q-args> | else | ls<bang> | let buffer_nn=input('Which one: ') | if buffer_nn != '' | exe buffer_nn != 0 ? 'buffer '.buffer_nn : 'enew' | endif | endif
+
+
+" use relative line numbers when focused on a window and in command mode
+" use absolute line numbers everywhere else
+augroup toggleLineNumbers
+	set rnu
+
+	au InsertEnter * :set nu
+	au InsertLeave * :set rnu
+	au FocusLost * :set nu
+	au FocusGained * :set rnu
+
+	au BufLeave * :set nu
+	au BufEnter * :set rnu
+	au WinLeave * :set nu
+	au WinEnter * :set rnu
+augroup END
