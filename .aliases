@@ -106,3 +106,6 @@ alias src="source $HOME/.bash_profile"
 
 #shortcut to homebrew stuff
 alias cellar="cd /usr/local/Cellar"
+
+# constant typo
+alias ake="make"
