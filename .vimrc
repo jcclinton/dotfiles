@@ -1,3 +1,4 @@
+let mapleader = ","
 " show line numbers
 set number
 set nohls
@@ -5,6 +6,13 @@ set nohls
 set incsearch
 " highlight matches when you search
 set showmatch
+set hlsearch " highlights all search results
+"removes highligts by pressing ,<space>
+nnoremap <leader><space> :noh<cr>
+
+set ignorecase
+set smartcase " ignores case if all lowercase
+
 set tabstop=2
 set shiftwidth=2
 set nocompatible
@@ -43,6 +51,33 @@ set splitright
 " sets :sp to open new windows below current window
 set splitbelow
 
+" turn off modelines
+set modelines=0
+
+" show command in bottom right hand corner
+set showcmd
+
+" hides buffers rathers than closes
+set hidden
+set pastetoggle=<F2> " pressing F2 toggles mode for pasting from OS buffer
+
+set encoding=utf-8
+
+set cursorline "highlights current line
+set ttyfast "fast drawing
+
+if has('colorcolumn')
+	set colorcolumn=85 "sets colored column to show when a line is getting too long
+end
+
+" up/down doesnt jump over line wrap
+nnoremap j gj
+nnoremap k gk
+
+" turns off vims default regex characters and uses regular regex characters
+nnoremap / /\v
+vnoremap / /\v
+
 "disable line wrap
 "set nowrap
 
@@ -63,16 +98,18 @@ command -nargs=? -bang  Buffer  if <q-args> != '' | exe 'buffer '.<q-args> | els
 
 " use relative line numbers when focused on a window and in command mode
 " use absolute line numbers everywhere else
-augroup toggleLineNumbers
-	set rnu
+if has('rnu')
+	augroup toggleLineNumbers
+		set rnu
 
-	au InsertEnter * :set nu
-	au InsertLeave * :set rnu
-	au FocusLost * :set nu
-	au FocusGained * :set rnu
+		au InsertEnter * :set nu
+		au InsertLeave * :set rnu
+		au FocusLost * :set nu
+		au FocusGained * :set rnu
 
-	au BufLeave * :set nu
-	au BufEnter * :set rnu
-	au WinLeave * :set nu
-	au WinEnter * :set rnu
-augroup END
+		au BufLeave * :set nu
+		au BufEnter * :set rnu
+		au WinLeave * :set nu
+		au WinEnter * :set rnu
+	augroup END
+end
