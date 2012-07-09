@@ -66,7 +66,7 @@ set encoding=utf-8
 set cursorline "highlights current line
 set ttyfast "fast drawing
 
-if has('colorcolumn')
+if version >= 703
 	set colorcolumn=85 "sets colored column to show when a line is getting too long
 end
 
@@ -98,7 +98,7 @@ command -nargs=? -bang  Buffer  if <q-args> != '' | exe 'buffer '.<q-args> | els
 
 " use relative line numbers when focused on a window and in command mode
 " use absolute line numbers everywhere else
-if has('rnu')
+if version >= 703
 	augroup toggleLineNumbers
 		set rnu
 
