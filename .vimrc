@@ -1,3 +1,15 @@
+set nocompatible
+
+"filetype off
+" activate pathogen
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+"filetype plugin indent on
+
+" set wildignore
+set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.ttf
+
+
 let mapleader = ","
 " show line numbers
 set number
@@ -7,15 +19,18 @@ set incsearch
 " highlight matches when you search
 set showmatch
 set hlsearch " highlights all search results
+
 "removes highligts by pressing ,<space>
 nnoremap <leader><space> :noh<cr>
+
+" use :Ack by press ,a
+nnoremap <leader>a :Ack 
 
 set ignorecase
 set smartcase " ignores case if all lowercase
 
 set tabstop=2
 set shiftwidth=2
-set nocompatible
 set autoindent
 set smartindent
 set ruler
@@ -64,7 +79,7 @@ set pastetoggle=<F2> " pressing F2 toggles mode for pasting from OS buffer
 set encoding=utf-8
 
 set cursorline "highlights current line
-set ttyfast "fast drawing
+"set ttyfast "fast drawing
 
 if version >= 703
 	set colorcolumn=85 "sets colored column to show when a line is getting too long
@@ -75,8 +90,8 @@ nnoremap j gj
 nnoremap k gk
 
 " turns off vims default regex characters and uses regular regex characters
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 
 "disable line wrap
 "set nowrap
