@@ -109,3 +109,5 @@ alias cellar="cd /usr/local/Cellar"
 
 # constant typo
 alias ake="make"
+alias moba="cd ~/criticalclick/repos/"
+alias tl="tail -f /private/var/log/apache2/error_log"

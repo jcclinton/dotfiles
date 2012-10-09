@@ -1,12 +1,5 @@
 set nocompatible
 
-"filetype off
-" activate pathogen
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-"filetype plugin indent on
-
-" set wildignore
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.ttf
 
 
@@ -19,6 +12,10 @@ set incsearch
 " highlight matches when you search
 set showmatch
 set hlsearch " highlights all search results
+
+" Don’t add empty newlines at the end of files
+"set binary
+"set noeol
 
 "removes highligts by pressing ,<space>
 nnoremap <leader><space> :noh<cr>
@@ -79,11 +76,11 @@ set pastetoggle=<F2> " pressing F2 toggles mode for pasting from OS buffer
 set encoding=utf-8
 
 set cursorline "highlights current line
-"set ttyfast "fast drawing
+set ttyfast "fast drawing
 
-if version >= 703
-	set colorcolumn=85 "sets colored column to show when a line is getting too long
-end
+"if version >= 703
+	"set colorcolumn=85 "sets colored column to show when a line is getting too long
+"end
 
 " up/down doesnt jump over line wrap
 nnoremap j gj
