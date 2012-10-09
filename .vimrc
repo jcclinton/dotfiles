@@ -75,7 +75,8 @@ set pastetoggle=<F2> " pressing F2 toggles mode for pasting from OS buffer
 
 set encoding=utf-8
 
-set cursorline "highlights current line
+"this slows vim down because it has to redraw the entire window when you change lines
+"set cursorline "highlights current line
 set ttyfast "fast drawing
 
 "if version >= 703
@@ -110,18 +111,19 @@ command -nargs=? -bang  Buffer  if <q-args> != '' | exe 'buffer '.<q-args> | els
 
 " use relative line numbers when focused on a window and in command mode
 " use absolute line numbers everywhere else
-if version >= 703
-	augroup toggleLineNumbers
-		set rnu
-
-		au InsertEnter * :set nu
-		au InsertLeave * :set rnu
-		au FocusLost * :set nu
-		au FocusGained * :set rnu
-
-		au BufLeave * :set nu
-		au BufEnter * :set rnu
-		au WinLeave * :set nu
-		au WinEnter * :set rnu
-	augroup END
-end
+" this slows everything down because it has to redraw the entire window when you change lines
+"if version >= 703
+	"augroup toggleLineNumbers
+		"set rnu
+"
+		"au InsertEnter * :set nu
+		"au InsertLeave * :set rnu
+		"au FocusLost * :set nu
+		"au FocusGained * :set rnu
+"
+		"au BufLeave * :set nu
+		"au BufEnter * :set rnu
+		"au WinLeave * :set nu
+		"au WinEnter * :set rnu
+	"augroup END
+"end
