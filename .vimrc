@@ -1,5 +1,11 @@
 set nocompatible
 
+" Use pathogen to easily modify the runtime path to include all
+" plugins under the ~/.vim/bundle directory
+"call pathogen#helptags()
+"call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.ttf
 
 
@@ -70,7 +76,8 @@ set modelines=0
 set showcmd
 
 " hides buffers rathers than closes
-set hidden
+"set hidden
+
 set pastetoggle=<F2> " pressing F2 toggles mode for pasting from OS buffer
 
 set encoding=utf-8
@@ -127,3 +134,7 @@ command -nargs=? -bang  Buffer  if <q-args> != '' | exe 'buffer '.<q-args> | els
 		"au WinEnter * :set rnu
 	"augroup END
 "end
+
+"ctrl-p settings
+nnoremap <leader>p :CtrlP<cr>
+let g:ctrlp_working_path_mode = '0'

@@ -43,16 +43,22 @@ function parse_git_branch() {
 
 
 # Git/Subversion prompt function
-__git_svn_ps1() {
+__git_ps1() {
+    local g=
+    if [[ -d .git ]] ; then
+        g=`parse_git_branch`
+				g="git on $g"
+				echo -n "$g"
+    fi
+}
+__svn_ps1() {
     local s=
     if [[ -d ".svn" ]] ; then
         local r=`__svn_rev`
         local b=`__svn_branch`
-        s=" on [$b:$r]"
-    elif [[ -d .git ]] ; then
-        s=`parse_git_branch`
-    fi
-    echo -n "$s"
+        s=" svn on $b:$r"
+				echo -n "$s"
+		fi
 }
 
 # Outputs the current trunk, branch, or tag
@@ -85,4 +91,5 @@ __svn_rev() {
     echo $r
 }
 
-PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(__git_svn_ps1)\[$WHITE\]\n\$ \[$RESET\]"
+PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w \[$MAGENTA\]\$(__git_ps1)\[$PURPLE\]\$(__svn_ps1)\[$WHITE\]\n\$ \[$RESET\]"
+#PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(__git_svn_ps1)\[$WHITE\]\n\$ \[$RESET\]"
