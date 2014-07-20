@@ -51,3 +51,5 @@
 [user]
 	name = Jamie Clinton
 	email = jcclinton24@gmail.com
+[push]
+	default = simple
