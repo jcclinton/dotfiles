@@ -83,9 +83,11 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 alias titanium='/Library/Application\ Support/Titanium/mobilesdk/osx/1.7.2/titanium.py'
 
 #nginx commands:
-alias n2start='/usr/local/Cellar/nginx/1.0.8/sbin/nginx -c /usr/local/Cellar/nginx/1.0.8/nginx.conf'
-alias n2stop='/usr/local/Cellar/nginx/1.0.8/sbin/nginx -s stop'
-alias n2r='/usr/local/Cellar/nginx/1.0.8/sbin/nginx -s reload'
+#alias n2start='/usr/local/Cellar/nginx/1.2.7/sbin/nginx -c /usr/local/Cellar/nginx/1.0.8/nginx.conf'
+alias n2start='/usr/local/Cellar/nginx/1.2.7/sbin/nginx -c /usr/local/etc/nginx/nginx.conf'
+alias n2stop='/usr/local/Cellar/nginx/1.2.7/sbin/nginx -s stop'
+#alias n2r='/usr/local/Cellar/nginx/1.2.7/sbin/nginx -s reload'
+alias r2start='redis-server /usr/local/etc/redis.conf'
 
 #apache commands:
 alias a2start="sudo apachectl -k start"
@@ -93,7 +95,7 @@ alias a2stop="sudo apachectl -k stop"
 alias a2r="sudo apachectl -k restart"
 
 #couch commands:
-alias c2start='/usr/local/Cellar/couchdb/1.1.1/bin/couchdb'
+alias c2start='/usr/local/Cellar/couchdb/1.2.1/bin/couchdb'
 #couch and nginx
 alias cms2start='n2start && c2start'
 
@@ -111,3 +113,9 @@ alias cellar="cd /usr/local/Cellar"
 alias ake="make"
 alias moba="cd ~/criticalclick/repos/"
 alias tl="tail -f /private/var/log/apache2/error_log"
+
+#remove all unversioned svn files
+alias svnrm="svn status | egrep '^\?' | cut -c8- | xargs rm"
+
+alias terminal-notifier=/Applications/Utilities/terminal-notifier.app/Contents/MacOS/terminal-notifier
+alias timer="ruby ~/projects/ruby/timer.rb"
