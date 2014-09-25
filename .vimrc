@@ -4,7 +4,7 @@ set nocompatible
 " plugins under the ~/.vim/bundle directory
 "call pathogen#helptags()
 "call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
+"call pathogen#infect()
 
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.ttf
 
@@ -136,5 +136,6 @@ command -nargs=? -bang  Buffer  if <q-args> != '' | exe 'buffer '.<q-args> | els
 "end
 
 "ctrl-p settings
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 nnoremap <leader>p :CtrlP<cr>
 let g:ctrlp_working_path_mode = '0'

@@ -19,5 +19,4 @@ complete -W "NSGlobalDomain" defaults
 PATH=$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Cellar/php/5.3.10/bin:/usr/local/share/npm/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
+source ~/.profile
