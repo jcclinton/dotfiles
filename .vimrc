@@ -32,6 +32,7 @@ nnoremap <leader>a :Ack
 set ignorecase
 set smartcase " ignores case if all lowercase
 
+set expandtab " expand tab to spaces
 set tabstop=2
 set shiftwidth=2
 set autoindent
