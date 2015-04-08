@@ -53,3 +53,29 @@ function linecount(){
 function curlsize(){
 	curl -w "%{size_download}" $1
 }
+
+# switches to master, pulls remote, deletes previous branch
+function gitms() {
+
+  function parse_git_dirty() {
+    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
+  }
+  function parse_git_branch() {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+  }
+  BRANCH=$(parse_git_branch)
+  git co master && git pull && git branch -d $BRANCH
+}
+
+# pushes current branch to origin
+function gitps() {
+
+  function parse_git_dirty() {
+    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
+  }
+  function parse_git_branch() {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+  }
+  BRANCH=$(parse_git_branch)
+  git push -u origin $BRANCH
+}
