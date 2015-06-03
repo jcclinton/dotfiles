@@ -5,10 +5,10 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # List all files colorized in long format, including dot files
-alias la="ls -Gla"
+alias la="ls -Glah"
 
 # list all files colorized in long format, dont include dot files
-alias ll="ls -Gl"
+alias ll="ls -Glh"
 
 # List only directories
 alias lsd='ls -l | grep "^d"'
@@ -119,3 +119,6 @@ alias svnrm="svn status | egrep '^\?' | cut -c8- | xargs rm"
 
 alias terminal-notifier=/Applications/Utilities/terminal-notifier.app/Contents/MacOS/terminal-notifier
 alias timer="ruby ~/projects/ruby/timer.rb"
+
+#common mistake
+alias xit="exit"
